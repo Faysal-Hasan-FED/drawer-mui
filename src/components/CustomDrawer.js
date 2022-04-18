@@ -2,7 +2,7 @@ import React from 'react';
 import { AppBar, Box, CssBaseline, Divider, Drawer,IconButton,List,ListItem ,ListItemIcon ,ListItemText, Toolbar, Typography  } from '@mui/material';
 import MenuIcon from '@mui/icons-material/Menu';
 import { SidebarData } from './SidebarData';
-import { Link } from 'react-router-dom';
+import { Link, NavLink } from 'react-router-dom';
 import './CustomDrawer.css';
 
 
@@ -25,15 +25,23 @@ const CustomDrawer = (props) => {
       
       <List>
         {SidebarData.map((item) => (
-          <Link to={item.link} key={item.id}>
+           <NavLink to={item.link}
+           style={({ isActive }) => ({
+           color: isActive ? 'red' : 'black',
+           marginRight: isActive ? '25px' : '25px',
+           textDecoration: isActive? 'none' : 'none',
+           fontWeight: isActive ? 'bold' : 'normal'})}>
+             
           <ListItem button >
-           <ListItemIcon>
+              <ListItemIcon>
               {item.icon}
-            </ListItemIcon>
-            <ListItemText primary={item.title} />
+              </ListItemIcon>
+              <ListItemText primary={item.title} />
           </ListItem>
-          </Link>
           
+          
+          </NavLink>
+
         ))}
       </List>
 

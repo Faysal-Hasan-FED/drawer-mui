@@ -1,11 +1,11 @@
 import React from 'react';
 
-const Message = () => {
+const Friends = () => {
     return (
         <div className='component'>
-            <h2>Message</h2>
+            <h2>Friends</h2>
         </div>
     );
 };
 
-export default Message;
+export default Friends;
