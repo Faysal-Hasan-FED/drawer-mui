@@ -26,6 +26,7 @@ const CustomDrawer = (props) => {
       <List>
         {SidebarData.map((item) => (
            <NavLink to={item.link}
+           key={item.id}
            style={({ isActive }) => ({
            color: isActive ? 'red' : 'black',
            marginRight: isActive ? '25px' : '25px',
